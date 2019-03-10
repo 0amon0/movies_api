@@ -61,10 +61,6 @@ class SignIn extends Component {
                         <button className="submit" onClick={this.handleSubmit}>
                             Sign In
                         </button>
-                        <div>
-                            {this.state.email}
-                            {this.state.password}
-                        </div>
                     </div>
                     
                 </form>
