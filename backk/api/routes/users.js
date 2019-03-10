@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const User = require("../models/user");
+
+
 router.get('/users',(req,res,next) => {
   return User.find({})
     .sort({ created_at: "descending" }) 

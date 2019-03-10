@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Register extends Component {
+class SignIn extends Component {
     state = { 
         email: "" ,
         password: ""
@@ -11,10 +11,11 @@ class Register extends Component {
             [e.target.name]: e.target.value
         });
     }
+    
 
     handleSubmit = e => {
         e.preventDefault();
-        fetch("http://localhost:3003/user/signup", { 
+        fetch("http://localhost:3003/user/signin", { 
             method : "POST",
             headers: {
                 "Content-Type":"application/json",
@@ -27,7 +28,7 @@ class Register extends Component {
 
         })
         .then(result => {
-            return result.json();
+            return console.log(result.json());
         })
         
     }
@@ -35,7 +36,7 @@ class Register extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <h2>Registration</h2>
+                <h2>Sign In</h2>
                 <form onSubmit={this.handleSubmit}> 
                     <div>
                         <label htmlFor="email">Email:</label>
@@ -58,8 +59,12 @@ class Register extends Component {
                     </div>
                     <div>
                         <button className="submit" onClick={this.handleSubmit}>
-                            Register
+                            Sign In
                         </button>
+                        <div>
+                            {this.state.email}
+                            {this.state.password}
+                        </div>
                     </div>
                     
                 </form>
@@ -68,4 +73,4 @@ class Register extends Component {
     }
 }
  
-export default Register;
+export default SignIn;

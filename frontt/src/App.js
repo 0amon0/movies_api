@@ -5,6 +5,8 @@ import Register from './components/Register';
 import Movies from './components/Movies';
 import Movie from './components/Movie';
 import Head from './components/Head';
+import SignIn from './components/SignIn';
+
 
 
 
@@ -20,6 +22,7 @@ class App extends Component {
           <Switch>
             <Route path="/" component={Movies} exact/> 
             <Route path="/register" component={Register} exact />
+            <Route path="/signin" component={SignIn} exact/>
             <Route path="/:id" component={Movie} exact/>
           </Switch>
         </div>
